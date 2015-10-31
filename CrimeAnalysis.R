@@ -14,9 +14,12 @@ crime <- crime[,c(3,5,6,7,9,12,13,15,16,18,19)]
 
 crime$Occurred.Date.or.Date.Range.Start <- 
         as.POSIXct(crime$Occurred.Date.or.Date.Range.Start, 
-        format = "%m/%d/%Y %I:%M:%S %p")
+        format = "%m/%d/%Y %I:%M:%S %p")  # Convert times to readable format
 
+
+## ========== HOW DO CRIMES CHANGE OVER THE YEAR? ============ ##
 # Group by month and Offense Type
+
 crimeMonthType <- crime %>% 
                         group_by(Month, Summarized.Offense.Description) %>% 
                         summarize(count = n()) %>%
@@ -26,7 +29,7 @@ crimeMonthType <- crime %>%
 
 data_wide <- spread(crimeMonthType, Month, count)
 data_wide[is.na(data_wide)] <- 0 
-data_wide$total <- rowSums(data_wide[2:13])
+data_wide$total <- rowSums(data_wide[2:13]) # Find crime totals for sorting
 data_wide <- data_wide[order(data_wide$total, decreasing = TRUE),]
 data_wide <- data_wide[c(1,3:25),]
 
@@ -36,7 +39,7 @@ data_wide <- data_wide[c(1,3:25),]
 # Tells how crimes change over time
 
 par(mfrow=c(5,5), mar=c(1,3,3,1))
-barplot(as.numeric(data_wide[1,2:13]))
+barplot(as.numeric(data_wide[1,2:13])) # Plot dummy plot to be removed
 for (i in 1:nrow(data_wide[,1])) {
         currCrime <- as.numeric( data_wide[i,2:13] )
         
@@ -50,6 +53,8 @@ for (i in 1:nrow(data_wide[,1])) {
         rect(0:11, yOffset, 1:12, currCrime+yOffset, col="#e26b43", border="white")
 }
 
+
+## ========== DOES THE MOON HAVE AN EFFECT? ============ ##
 # Map night time crimes as a function of lunar stage
 # Does the moon seem to have an effect on crimes across Seattle
 
@@ -68,7 +73,8 @@ ggplot(crimeNight, aes(x=Longitude, y=Latitude, fill="black")) + facet_grid(~moo
                               axis.text.y=element_blank(),axis.ticks=element_blank(),
                               axis.title.x=element_blank(),
                               axis.title.y=element_blank(),legend.position="none",
-                              panel.background=element_blank(),panel.border=element_blank(),panel.grid.major=element_blank(),
+                              panel.background=element_blank(),panel.border=element_blank(),
+                              panel.grid.major=element_blank(),
                               panel.grid.minor=element_blank(),plot.background=element_blank())
 
 # Rearrange data and get totals by Offense type and moon
