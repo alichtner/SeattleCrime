@@ -1,0 +1,11 @@
+crimeChoices <- list("Animal Complaints" = "ANIMAL COMPLAINT","Assaults" = "ASSAULT","Bike Thefts" = "BIKE THEFT",
+     "Burglaries" = "BURGLARY","Car Prowls" = "CAR PROWL","Counterfeiting" = "COUNTERFEIT","Disorderly Conduct Charges" = "DISORDERLY CONDUCT",
+     "Disputes" = "DISPUTE","Disturbances" = "DISTURBANCE","DUIs" = "DUI","Embezzlements" = "EMBEZZLE",
+     "Extortions" = "EXTORTION","Illegal Fireworks" = "FIREWORK","Forgeries" = "FORGERY","Frauds" = "FRAUD",
+     "Gambling" = "GAMBLE","Homicides" = "HOMICIDE","Illegal Dumpings" = "ILLEGAL DUMPING",
+     "Liquor Violations" = "LIQUOR VIOLATION", "Loitering Charges" = "LOITERING", "Lost Properties" = "LOST PROPERTY","Mail Thefts" = "MAIL THEFT",
+     "Narcotics Violations" = "NARCOTICS", "Obstructions" = "OBSTRUCT","Pickpockets" = "PICKPOCKET","Public Nuisance Charges" = "PUBLIC NUISANCE",
+     "Pornography Violations" = "PORNOGRAPHY","Damaged Property" = "PROPERTY DAMAGE","Prostitution Charges" = "PROSTITUTION","Purse Snatchings" = "PURSE SNATCH",
+     "Reckless Burnings" = "RECKLESS BURNING","Robberies" = "ROBBERY","Shoplifting Charges" = "SHOPLIFTING","Property Stolen" = "STOLEN PROPERTY",
+     "Theft of Services" = "THEFT OF SERVICES","Threats" = "THREATS","Traffic Violations" = "TRAFFIC","Trespassing" = "TRESPASS","Vehicle Thefts" = "VEHICLE THEFT",
+     "Violations of Court Orders" = "VIOLATION OF COURT ORDER","Warrant Arrests" = "WARRANT ARREST","Weapons Charges" = "WEAPON")

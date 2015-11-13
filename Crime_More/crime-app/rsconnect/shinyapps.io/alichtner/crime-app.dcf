@@ -1,0 +1,9 @@
+name: crime-app
+account: alichtner
+server: shinyapps.io
+appId: 68300
+bundleId: 309611
+url: https://alichtner.shinyapps.io/crime-app
+when: 1447374815.6036
+asMultiple: FALSE
+asStatic: FALSE
